@@ -98,9 +98,25 @@ for (dirpath, dirnames, filenames) in walk(full_path):
                     if oo - found > 100:
                         if previous_value == 0:
                             df7 = df7.append(df1.iloc[oo-1])
+                            # df7 = df7.append(df1.iloc[oo-1], how=)
+                            # df13 = pd.DataFrame(df1.iloc[oo-1])
+                            # #
+                            #
+                            # df7 = pd.concat([df7, df13], ignore_index=False)
+                            # df7 = pd.merge(df7, df13, how='Right')
+
+
                             found = oo
                         elif adc_3 == 0:
                             df7 = df7.append(df1.iloc[oo-1])
+                            # df7 = df7.append(df1.iloc[oo-1])
+                            # df13 = pd.DataFrame(df1.iloc[oo-1])
+                            # #
+                            #
+                            # df7 = pd.concat([df7, df13], ignore_index=False)
+                            # df7 = pd.merge(df7, df13, how='Right')
+
+
                             found = oo
                 previous_value = adc_3
                 oo = oo + 1

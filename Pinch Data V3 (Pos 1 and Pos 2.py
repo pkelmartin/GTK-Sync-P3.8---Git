@@ -46,16 +46,16 @@ for (dirpath, dirnames, filenames) in walk(full_path):
                     if csv == 1 and excel == 1 and report == 1 and MD == 1 and UP == 1:
                         break
 
-                    # if folders2 == 'position 1' or 'position 2':
-                    #     if folders2 == 'position 1':
-                    #         MD = 1
-                    #     if folders2 == 'position 2':
-                    #         UP = 1
-                    if folders2 == 'Maximum Deflection' or 'User Position':
-                        if folders2 == 'Maximum Deflection':
+                    if folders2 == 'position 1' or 'position 2':
+                        if folders2 == 'position 1':
                             MD = 1
-                        if folders2 == 'User Position':
+                        if folders2 == 'position 2':
                             UP = 1
+                    # if folders2 == 'Maximum Deflection' or 'User Position':
+                    #     if folders2 == 'Maximum Deflection':
+                    #         MD = 1
+                    #     if folders2 == 'User Position':
+                    #         UP = 1
 
                         f4 = []
                         for (dirpath3, dirnames3, filenames3) in walk(full_path+'/'+folders+'/'+folders2):

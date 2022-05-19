@@ -337,27 +337,27 @@ for (dirpath, dirnames, filenames) in walk(full_path):
 
                         if not os.path.exists(full_path+'/Results Package'):
                             os.makedirs(full_path+'/Results Package')
-                        # if not os.path.exists(full_path+'/Results Package/Plots'):
-                        #     os.makedirs(full_path+'/Results Package/Plots')
-                        # if not os.path.exists(full_path+'/Results Package/Plots'+Unit_SN+folders2+'.png'):
-                        #
-                        #     fig1 = plt.figure()
-                        #     plt.plot(new_time_list,reset_force, label='Load Cell')
-                        #     plt.plot(x1,adclist, label='Normalised ADC')
-                        #
-                        #     plt.legend(title='KPI Sources')
-                        #     # plt.show()
-                        #     print('debug')
-                        #
-                        #
-                        #
-                        #
-                        #
-                        #
-                        #
-                        #
-                        #     plt.savefig(full_path+'/Results Package/Plots/'+Unit_SN+' '+folders2+'.png',dpi=500)
-                        #     plt.close()
+                        if not os.path.exists(full_path+'/Results Package/Plots'):
+                            os.makedirs(full_path+'/Results Package/Plots')
+                        if not os.path.exists(full_path+'/Results Package/Plots'+Unit_SN+folders2+'.png'):
+
+                            fig1 = plt.figure()
+                            plt.plot(new_time_list,reset_force, label='Load Cell')
+                            plt.plot(x1,adclist, label='Normalised ADC')
+
+                            plt.legend(title='KPI Sources')
+                            # plt.show()
+                            print('debug')
+
+
+
+
+
+
+
+
+                            plt.savefig(full_path+'/Results Package/Plots/'+Unit_SN+' '+folders2+'.png',dpi=500)
+                            plt.close()
 
 
                         df33 = pd.DataFrame()
