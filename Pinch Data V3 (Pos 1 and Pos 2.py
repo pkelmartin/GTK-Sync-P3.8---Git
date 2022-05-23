@@ -51,7 +51,7 @@ for (dirpath, dirnames, filenames) in walk(full_path):
                             MD = 1
                         if folders2 == 'position 2':
                             UP = 1
-                    # if folders2 == 'Maximum Deflection' or 'User Position':
+
                     #     if folders2 == 'Maximum Deflection':
                     #         MD = 1
                     #     if folders2 == 'User Position':
