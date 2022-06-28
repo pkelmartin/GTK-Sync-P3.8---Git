@@ -191,12 +191,33 @@ def pinch_data_post_processing_v5(full_path):
                                 max_force_1 = max(force_list_1)
                                 f_d = force - last_force
                                 difference_l.append(f_d)
+                                min_force = min(force_list_1)
                                 last_force = force
-                                if max_force_1 > 4 and force < 0.01:
+                                if max_force_1 > 4 and abs(force-min_force) < 0.01:
                                     found = 1
                                     break
                                 oo = oo + 1
                                 pp = pp + 1
+
+                            if found == 0:
+                                oo = j
+                                pp = 0
+                                found = 0
+                                last_force = 0
+                                force_list_1 = []
+                                difference_l = []
+                                for force in force_1:
+                                    force_list_1.append(force)
+                                    max_force_1 = max(force_list_1)
+                                    min_force = min(force_list_1)
+                                    f_d = force - last_force
+                                    difference_l.append(f_d)
+                                    last_force = force
+                                    if max_force_1 > 4 and abs(force-min_force) < 0.1:
+                                        found = 1
+                                        break
+                                    oo = oo + 1
+                                    pp = pp + 1
 
 
                             end_force_row = press.loc[oo]
@@ -258,6 +279,9 @@ def pinch_data_post_processing_v5(full_path):
 
                                 plt.savefig(full_path+'/'+folders+' Plots/'+sn+'-'+position+' Press '+str(l+1)+'.png',dpi=500)
                                 plt.close()
+                                plt.rcParams.update({'figure.max_open_warning': 0})
+
+
 
                             Data_Values = {'S/N': [sn],
                                            'Side': [side],
